@@ -4,10 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="main.js"></script>
+    <script src="javascript/wesen.js"></script>
+    <script src="javascript/main.js"></script>
     <title>Trabajo Octubre Grimm</title>
 </head>
-<body>
-    
+<body onload="instanciaMain.crearTabla(instanciaMain.listawesens)">
+    <header>
+        <h1> Base de datos Wesen </h1>
+    </header>
+
+    <div class="parent">
+        <div class="div1">
+            <div id="tablaContainer"></div>
+        </div>
+        <div class="div2">
+                <form>
+                <input id="inputname" placeholder="Nombre" type="text">
+                <br>
+                <input id="inputimagen" placeholder="Imagen" type="text">
+                <br>
+                <select id="selecttipos">
+                    <option value="default"> Elige el tipo </option>
+                    <option value="lobo"> lobo </option>
+                    <option value="canido"> canido </option>
+                    <option value="felino"> felino </option>
+                    <option value="reptil"> reptil </option>
+                    <option value="insecto"> insecto </option>
+                    <option value="anfibio"> anfibio </option>
+                    <option value="ave"> ave </option>
+                    <option value="monstruo"> monstruo </option>
+                    <option value="amigable"> amigable </option>
+                </select>
+                <br>
+                <select id="selectpeligrosidad">
+                    <option value="default"> Elige su peligrosidad </option>
+                    <option value="pacifico"> pacifico </option>
+                    <option value="neutral"> neutral </option>
+                    <option value="peligroso"> peligroso </option>
+                    <option value="violento"> violento </option>
+                </select>
+                <br>
+                <input id="inputaspecto" placeholder="Aspecto" type="text">
+                <br>
+                <textarea placeholder="Notas" id="inputnotas"></textarea>
+                <br>
+                <input type="button" id="nuevowesen" onclick="instanciaMain.añadirWesen()" value="Añadir Wesen">
+                <br>
+                <input type="button" onclick="instanciaMain.editarWesen()" value="Editar Wesen">
+                <br>
+                <input type="button" onclick="instanciaMain.borrarWesen()" value="Eliminar Wesen">
+                <br>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
